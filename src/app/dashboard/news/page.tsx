@@ -194,16 +194,6 @@ export default function NewsManagementPage() {
         </div>
       )}
 
-      {/* Media Local Note Info */}
-      <div className="p-3.5 rounded-xl bg-surface-container-high/60 border border-outline-variant/30 text-xs text-on-surface-variant flex items-start gap-2.5">
-        <span className="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">
-          folder
-        </span>
-        <div>
-          <span className="font-bold text-on-surface">Catatan Media Lokal:</span> Seluruh gambar thumbnail disimpan di folder lokal <code>public/uploads/</code> dan path-nya tersimpan di database.
-        </div>
-      </div>
-
       {/* News Table */}
       <div className="bg-surface-container-low rounded-2xl border border-outline-variant/30 overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
@@ -275,7 +265,7 @@ export default function NewsManagementPage() {
                               isPublished ? "bg-secondary" : "bg-outline"
                             }`}
                           />
-                          <span>{isPublished ? "Tayang (Published)" : "Draf"}</span>
+                          <span>{isPublished ? "Tayang" : "Draf"}</span>
                         </span>
                       </td>
 
@@ -367,28 +357,36 @@ export default function NewsManagementPage() {
               {/* Upload Thumbnail */}
               <div className="flex flex-col gap-2">
                 <label className="text-xs font-semibold text-on-surface">
-                  Gambar Thumbnail (Unggah File Lokal)
+                  Gambar Sampul / Thumbnail Artikel
                 </label>
-                <div className="flex items-center gap-4">
-                  <div className="relative w-20 h-14 rounded-xl overflow-hidden bg-surface-container shrink-0 border border-outline-variant/40">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                  <div className="relative w-24 h-16 rounded-xl overflow-hidden bg-surface-container shrink-0 border border-outline-variant/40">
                     <Image
                       src={formData.thumbnail_path || "/images/news-1.jpg"}
                       alt="Thumbnail Preview"
                       fill
+                      unoptimized={formData.thumbnail_path?.startsWith("http")}
                       className="object-cover"
                     />
                   </div>
-                  <div className="flex flex-col gap-1 flex-1">
+                  <div className="flex flex-col gap-2 flex-1 w-full">
                     <input
                       type="file"
-                      accept="image/jpeg,image/png,image/webp"
+                      accept="image/*"
                       onChange={handleFileUpload}
                       disabled={uploadLoading}
                       className="text-xs text-on-surface-variant file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-surface-container file:text-on-surface hover:file:bg-surface-container-high"
                     />
-                    <span className="text-[10px] text-outline">
-                      {uploadLoading ? "Mengunggah gambar..." : "Format JPG, PNG, WEBP (Maksimal 5MB)"}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] text-outline shrink-0">Atau URL:</span>
+                      <input
+                        type="url"
+                        placeholder="https://images.unsplash.com/... atau /images/news-1.jpg"
+                        value={formData.thumbnail_path}
+                        onChange={(e) => setFormData({ ...formData, thumbnail_path: e.target.value })}
+                        className="px-2.5 py-1 text-xs rounded-lg bg-surface border border-outline-variant/40 flex-1 focus:ring-1 focus:ring-primary"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -432,7 +430,7 @@ export default function NewsManagementPage() {
                       onChange={() => setFormData({ ...formData, status: "published" })}
                       className="text-primary focus:ring-primary"
                     />
-                    <span className="font-semibold text-secondary">Terbitkan (Published)</span>
+                    <span className="font-semibold text-secondary">Terbitkan (Tayang)</span>
                   </label>
                   <label className="flex items-center gap-1.5 cursor-pointer">
                     <input

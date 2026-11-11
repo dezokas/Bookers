@@ -10,10 +10,10 @@ export async function POST(req: Request) {
     }
 
     const formData = await req.formData();
-    const file = formData.get("file") as File | null;
+    const file = formData.get("file");
 
-    if (!file) {
-      return NextResponse.json({ success: false, error: "File tidak ditemukan." }, { status: 400 });
+    if (!file || typeof file === "string") {
+      return NextResponse.json({ success: false, error: "File gambar tidak ditemukan atau kosong." }, { status: 400 });
     }
 
     const result = await saveFile(file);

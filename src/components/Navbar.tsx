@@ -67,6 +67,16 @@ export default function Navbar() {
     setMobileMenuOpen(false);
   };
 
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/auth/logout", { method: "POST" });
+      setCurrentUser(null);
+      window.location.href = "/";
+    } catch {
+      window.location.href = "/";
+    }
+  };
+
   const isAdmin = currentUser?.role === "admin";
 
   return (
@@ -119,14 +129,25 @@ export default function Navbar() {
         {/* Action Buttons */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           {currentUser ? (
-            <Link
-              href="/pesanan-saya"
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-surface-container-low text-on-surface hover:bg-surface-container transition-all border border-outline-variant/30 h-10 shadow-xs"
-              title="Lihat riwayat pesanan saya"
-            >
-              <span className="material-symbols-outlined text-[18px] text-primary">shopping_bag</span>
-              <span>Pesanan Saya</span>
-            </Link>
+            <div className="hidden sm:flex items-center gap-2">
+              <Link
+                href="/pesanan-saya"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-surface-container-low text-on-surface hover:bg-surface-container transition-all border border-outline-variant/30 h-10 shadow-xs"
+                title="Lihat riwayat pesanan saya"
+              >
+                <span className="material-symbols-outlined text-[18px] text-primary">shopping_bag</span>
+                <span>Pesanan Saya</span>
+              </Link>
+              <button
+                type="button"
+                onClick={handleLogout}
+                title="Keluar dari akun"
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-error hover:bg-error-container/40 transition-colors h-10 border border-error/20"
+              >
+                <span className="material-symbols-outlined text-[16px]">logout</span>
+                <span>Keluar</span>
+              </button>
+            </div>
           ) : (
             <Link
               href="/login"
@@ -227,6 +248,14 @@ export default function Navbar() {
                       Buka Dashboard Admin
                     </Link>
                   )}
+                  <button
+                    type="button"
+                    onClick={handleLogout}
+                    className="w-full py-3 rounded-xl text-center text-sm font-semibold bg-error-container text-on-error-container flex items-center justify-center gap-2"
+                  >
+                    <span className="material-symbols-outlined text-[18px]">logout</span>
+                    <span>Keluar Akun ({currentUser.name})</span>
+                  </button>
                 </>
               ) : (
                 <Link

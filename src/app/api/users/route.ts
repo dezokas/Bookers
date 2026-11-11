@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import bcrypt from "bcryptjs";
 import { getSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { User, Role } from "@/lib/types";
@@ -30,6 +31,66 @@ export async function GET() {
     }));
 
     return NextResponse.json({ success: true, users: sanitizedUsers });
+  } catch (error: any) {
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  }
+}
+
+// POST: Buat akun pengguna baru (dari admin dashboard)
+export async function POST(req: Request) {
+  try {
+    const session = await getSession();
+    if (!session || session.role !== "admin") {
+      return NextResponse.json({ success: false, error: "Akses ditolak." }, { status: 403 });
+    }
+
+    const { name, email, password, role_id } = await req.json();
+
+    if (!name || !email || !password) {
+      return NextResponse.json({ success: false, error: "Nama, email, dan kata sandi wajib diisi." }, { status: 400 });
+    }
+
+    if (password.length < 6) {
+      return NextResponse.json({ success: false, error: "Kata sandi minimal 6 karakter." }, { status: 400 });
+    }
+
+    // Cek apakah email sudah terdaftar
+    const existing = await db.getByField<User>("Users", "email", email.trim().toLowerCase());
+    if (existing) {
+      return NextResponse.json({ success: false, error: "Email sudah terdaftar di sistem." }, { status: 400 });
+    }
+
+    // Dapatkan role_id (default role_user jika tidak ditentukan)
+    let finalRoleId = role_id;
+    if (!finalRoleId) {
+      const userRole = await db.getByField<Role>("Roles", "name", "user");
+      finalRoleId = userRole?.id || "role_user";
+    }
+
+    const password_hash = await bcrypt.hash(password, 10);
+    const now = new Date().toISOString();
+
+    const newUser = await db.create<User>("Users", {
+      name: name.trim(),
+      email: email.trim().toLowerCase(),
+      password_hash,
+      role_id: finalRoleId,
+      status: "active",
+      created_at: now,
+      updated_at: now,
+    });
+
+    return NextResponse.json({
+      success: true,
+      message: "Akun pengguna baru berhasil dibuat.",
+      user: {
+        id: newUser.id,
+        name: newUser.name,
+        email: newUser.email,
+        role_id: newUser.role_id,
+        status: newUser.status,
+      },
+    });
   } catch (error: any) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }

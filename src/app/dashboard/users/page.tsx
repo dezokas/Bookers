@@ -28,6 +28,14 @@ export default function UsersManagementPage() {
   // Modal State for Delete Confirmation
   const [deleteModalUser, setDeleteModalUser] = useState<UserItem | null>(null);
 
+  // Modal State for Create New User
+  const [createModalOpen, setCreateModalOpen] = useState(false);
+  const [newUserName, setNewUserName] = useState("");
+  const [newUserEmail, setNewUserEmail] = useState("");
+  const [newUserPassword, setNewUserPassword] = useState("");
+  const [newUserRoleId, setNewUserRoleId] = useState("");
+  const [createLoading, setCreateLoading] = useState(false);
+
   const loadData = async () => {
     try {
       const [usersRes, rolesRes] = await Promise.all([
@@ -38,7 +46,13 @@ export default function UsersManagementPage() {
       const rolesData = await rolesRes.json();
 
       if (usersData.success) setUsers(usersData.users || []);
-      if (rolesData.success) setRoles(rolesData.roles || []);
+      if (rolesData.success) {
+        const loadedRoles = rolesData.roles || [];
+        setRoles(loadedRoles);
+        // Default role untuk akun baru adalah "user" (non-admin)
+        const defaultUserRole = loadedRoles.find((r: any) => r.name === "user");
+        if (defaultUserRole) setNewUserRoleId(defaultUserRole.id);
+      }
     } catch {
       setMessage({ type: "error", text: "Gagal memuat data pengguna." });
     } finally {
@@ -49,6 +63,45 @@ export default function UsersManagementPage() {
   useEffect(() => {
     loadData();
   }, []);
+
+  const handleCreateUser = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setCreateLoading(true);
+    setMessage(null);
+
+    try {
+      const res = await fetch("/api/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: newUserName,
+          email: newUserEmail,
+          password: newUserPassword,
+          role_id: newUserRoleId,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        setMessage({ type: "error", text: data.error || "Gagal membuat akun pengguna." });
+      } else {
+        setMessage({
+          type: "success",
+          text: `Akun baru ${newUserName} (${newUserEmail}) berhasil dibuat.`,
+        });
+        setCreateModalOpen(false);
+        setNewUserName("");
+        setNewUserEmail("");
+        setNewUserPassword("");
+        loadData();
+      }
+    } catch {
+      setMessage({ type: "error", text: "Terjadi kesalahan saat membuat akun." });
+    } finally {
+      setCreateLoading(false);
+    }
+  };
 
   const handleRoleChange = async (userId: string, newRoleId: string) => {
     setActionLoading(true);
@@ -141,18 +194,29 @@ export default function UsersManagementPage() {
           </p>
         </div>
 
-        {/* Search Bar */}
-        <div className="relative w-full sm:w-72">
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Cari nama atau email..."
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-surface text-on-surface text-xs border border-outline-variant/40 focus:outline-none focus:ring-2 focus:ring-primary-container"
-          />
-          <span className="material-symbols-outlined text-[18px] text-outline absolute left-3 top-2.5">
-            search
-          </span>
+        <div className="flex items-center gap-3 w-full sm:w-auto">
+          {/* Search Bar */}
+          <div className="relative w-full sm:w-64">
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Cari nama atau email..."
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-surface text-on-surface text-xs border border-outline-variant/40 focus:outline-none focus:ring-2 focus:ring-primary-container"
+            />
+            <span className="material-symbols-outlined text-[18px] text-outline absolute left-3 top-2.5">
+              search
+            </span>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setCreateModalOpen(true)}
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-primary text-on-primary text-xs font-semibold hover:bg-primary-container transition-all shadow-sm shrink-0"
+          >
+            <span className="material-symbols-outlined text-[18px]">person_add</span>
+            <span>Tambah Akun Baru</span>
+          </button>
         </div>
       </div>
 
@@ -331,6 +395,102 @@ export default function UsersManagementPage() {
                 {actionLoading ? "Menghapus..." : "Ya, Hapus Akun"}
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Create User Modal */}
+      {createModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs">
+          <div className="bg-surface rounded-2xl max-w-md w-full p-6 border border-outline-variant/30 shadow-xl flex flex-col gap-5">
+            <div className="flex items-center justify-between border-b border-outline-variant/30 pb-3">
+              <div className="flex items-center gap-2">
+                <span className="material-symbols-outlined text-primary text-[22px]">person_add</span>
+                <h3 className="font-headline text-lg font-bold text-on-surface">Buat Akun Pengguna Baru</h3>
+              </div>
+              <button
+                type="button"
+                onClick={() => setCreateModalOpen(false)}
+                className="text-outline hover:text-on-surface"
+              >
+                <span className="material-symbols-outlined text-[20px]">close</span>
+              </button>
+            </div>
+
+            <form onSubmit={handleCreateUser} className="flex flex-col gap-4 text-xs">
+              <div className="flex flex-col gap-1.5">
+                <label className="font-semibold text-on-surface">Nama Lengkap</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Contoh: Budi Santoso"
+                  value={newUserName}
+                  onChange={(e) => setNewUserName(e.target.value)}
+                  className="px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 focus:ring-2 focus:ring-primary"
+                />
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                <label className="font-semibold text-on-surface">Alamat Email</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="nama@email.com"
+                  value={newUserEmail}
+                  onChange={(e) => setNewUserEmail(e.target.value)}
+                  className="px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 focus:ring-2 focus:ring-primary"
+                />
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                <label className="font-semibold text-on-surface">Kata Sandi (Password)</label>
+                <input
+                  type="password"
+                  required
+                  minLength={6}
+                  placeholder="Minimal 6 karakter"
+                  value={newUserPassword}
+                  onChange={(e) => setNewUserPassword(e.target.value)}
+                  className="px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 focus:ring-2 focus:ring-primary"
+                />
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                <label className="font-semibold text-on-surface">Tingkat Role</label>
+                <select
+                  value={newUserRoleId}
+                  onChange={(e) => setNewUserRoleId(e.target.value)}
+                  className="px-3.5 py-2.5 rounded-xl bg-surface-container-low border border-outline-variant/40 focus:ring-2 focus:ring-primary"
+                >
+                  {roles.map((r) => (
+                    <option key={r.id} value={r.id}>
+                      {r.name === "user" ? "user (Pengguna Biasa / Bukan Admin)" : r.name}
+                    </option>
+                  ))}
+                </select>
+                <span className="text-[11px] text-outline">
+                  Pilih "user" untuk akun anggota biasa (bukan administrator).
+                </span>
+              </div>
+
+              <div className="flex items-center justify-end gap-2 pt-2 border-t border-outline-variant/30">
+                <button
+                  type="button"
+                  onClick={() => setCreateModalOpen(false)}
+                  className="px-4 py-2.5 rounded-xl text-xs font-semibold bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors"
+                >
+                  Batal
+                </button>
+                <button
+                  type="submit"
+                  disabled={createLoading}
+                  className="px-5 py-2.5 rounded-xl text-xs font-semibold bg-primary text-on-primary hover:bg-primary/90 transition-colors shadow-xs disabled:opacity-50 flex items-center gap-1.5"
+                >
+                  <span className="material-symbols-outlined text-[16px]">check</span>
+                  <span>{createLoading ? "Menyimpan..." : "Buat Akun"}</span>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}

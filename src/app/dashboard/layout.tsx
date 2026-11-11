@@ -146,7 +146,7 @@ export default function DashboardLayout({
             </div>
           </div>
 
-          {/* User Profile Pill */}
+          {/* User Profile Pill & Logout */}
           <div className="flex items-center gap-3">
             <div className="hidden sm:flex flex-col text-right">
               <span className="text-sm font-bold text-on-surface leading-tight">
@@ -159,6 +159,15 @@ export default function DashboardLayout({
             <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary font-bold shadow-sm">
               <span className="material-symbols-outlined text-[22px]">admin_panel_settings</span>
             </div>
+            <button
+              onClick={handleLogout}
+              disabled={loggingOut}
+              title="Keluar dari akun"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-error-container text-on-error-container hover:bg-error hover:text-on-error transition-colors shadow-xs"
+            >
+              <span className="material-symbols-outlined text-[16px]">logout</span>
+              <span className="hidden sm:inline">{loggingOut ? "..." : "Keluar"}</span>
+            </button>
           </div>
         </header>
 
