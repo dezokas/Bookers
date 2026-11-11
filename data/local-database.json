@@ -1,0 +1,175 @@
+{
+  "Roles": [
+    {
+      "id": "role_admin",
+      "name": "admin",
+      "description": "Pengelola penuh sistem, konten, role, dan akun pengguna",
+      "permissions": "*",
+      "is_system": "true",
+      "created_at": "2026-11-10T04:29:29.981Z"
+    },
+    {
+      "id": "role_user",
+      "name": "user",
+      "description": "Pengguna terdaftar (pembaca & anggota komunitas)",
+      "permissions": "read:news,order:create",
+      "is_system": "true",
+      "created_at": "2026-11-10T04:29:29.981Z"
+    }
+  ],
+  "Users": [
+    {
+      "id": "usr_admin_default",
+      "name": "Administrator Bookers",
+      "email": "admin@gmail.com",
+      "password_hash": "$2b$10$IFVSI7iRdqS99HLhnOFvUOyV8k5FPw3zQNkI.bLmbWZ7FbzhK8vTC",
+      "role_id": "role_admin",
+      "status": "active",
+      "created_at": "2026-11-10T04:29:29.981Z",
+      "updated_at": "2026-11-10T06:03:37.110Z"
+    },
+    {
+      "name": "Penikmat Buku",
+      "email": "pembaca_1794290441152@gmail.com",
+      "password_hash": "$2b$10$.XjtWToANhs76Ix7u/xIAeOqi3l6kmPfm31VT.ROC/WEjRYAR1/PG",
+      "role_id": "role_user",
+      "status": "active",
+      "created_at": "2026-11-10T06:00:41.373Z",
+      "updated_at": "2026-11-10T06:24:37.219Z",
+      "id": "rec_1794290441376_3yxes"
+    }
+  ],
+  "News": [
+    {
+      "id": "news_1",
+      "title": "Membaca Ulang Realisme Magis dalam Lanskap Sastra Asia Tenggara Kontemporer",
+      "slug": "realisme-magis-asia-tenggara",
+      "excerpt": "Bagaimana penulis muda Indonesia mengolah kembali mitos lokal menjadi refleksi kritis persoalan sosial modern.",
+      "content": "Karya sastra realisme magis kembali menemukan ruang hangat di kalangan pembaca muda tanah air. Melalui perpaduan kearifan lokal dan kritik sosial kontemporer, naskah-naskah terbaru menyajikan dialog mendalam yang tidak sekadar menghibur namun juga menggugah nalar kritis.",
+      "thumbnail_path": "/images/news-1.jpg",
+      "status": "published",
+      "author_id": "usr_admin_default",
+      "created_at": "2025-05-14T10:00:00.000Z",
+      "updated_at": "2026-11-10T04:29:29.981Z"
+    },
+    {
+      "id": "news_2",
+      "title": "Malam Puisi Senopati: Membuka Ruang Dialog Inklusif bagi Generasi Baru",
+      "slug": "malam-puisi-senopati",
+      "excerpt": "Ratusan penikmat sastra berkumpul di Bookers Lounge merayakan peluncuran antologi puisi kemanusiaan dan kebebasan berekspresi.",
+      "content": "Suasana temaram hangat di Bookers Senopati menjadi saksi pertemuan lebih dari seratus pecinta bait puisi. Program rutin mingguan ini membuka panggung bebas bagi siapa pun yang ingin membacakan karya maupun mendengarkan curahan renungan sastra.",
+      "thumbnail_path": "/images/news-2.jpg",
+      "status": "published",
+      "author_id": "usr_admin_default",
+      "created_at": "2025-05-08T19:30:00.000Z",
+      "updated_at": "2026-11-10T04:29:29.981Z"
+    },
+    {
+      "id": "news_3",
+      "title": "Panduan Menyusun Proposal Naskah yang Memikat Penerbit Idaman Anda",
+      "slug": "panduan-proposal-naskah",
+      "excerpt": "Langkah-langkah esensial dari meja dewan redaksi Bookers untuk membantu karya perdana Anda lolos telaah kurasi tanpa berbelit.",
+      "content": "Banyak naskah brilian gagal tembus ke meja redaksi hanya karena penyusunan proposal sinopsis yang kurang terstruktur. Artikel panduan ini merangkum 5 poin kunci yang selalu dinilai oleh dewan kurator Bookers saat meninjau karya baru.",
+      "thumbnail_path": "/images/news-3.jpg",
+      "status": "published",
+      "author_id": "usr_admin_default",
+      "created_at": "2025-04-29T14:00:00.000Z",
+      "updated_at": "2026-11-10T04:29:29.981Z"
+    },
+    {
+      "title": "Lagu \"Big and Bad\".",
+      "slug": "lagu-big-and-bad-mwabw4pc",
+      "excerpt": "Lagu animasi 3D berenergi tinggi dari ZAMination yang menampilkan kesombongan dan kehebatan seorang penjahat kosmik.",
+      "content": "\"Big and Bad\" adalah lagu dan animasi utama yang menjadi tema karakter Big Bad dalam serial animasi Calling All Villains karya ZAMination. Lagu ini menggambarkan sejarah kejahatan kosmik, kesombongan, dan sifat penjahat utama yang senang memamerkan kekuatannya lewat pertunjukan teatrikal yang megah. Secara visual, karya ini menggunakan animasi 3D khas ZAMination dengan koreografi berenergi tinggi dan gaya musik yang penuh percaya diri.",
+      "thumbnail_path": "/uploads/1794293280818-af026d6f673e.png",
+      "status": "published",
+      "author_id": "usr_admin_default",
+      "created_at": "2026-11-10T06:48:01.488Z",
+      "updated_at": "2026-11-10T06:48:01.490Z",
+      "id": "rec_1794293281490_hjuyx"
+    },
+    {
+      "title": "Crygle Academy",
+      "slug": "crygle-academy-mwacxbod",
+      "excerpt": "Crygle Academy merupakan les tambahan di IDN Boarding School yang murid murid bisa mengikuti. Siswa dalam Crygle Academy dapat memlih salah satu dari tiga jurusan yang telah disediakan.",
+      "content": "tes",
+      "thumbnail_path": "/uploads/1794294939648-e8b0baef38b5.jpeg",
+      "status": "published",
+      "author_id": "usr_admin_default",
+      "created_at": "2026-11-10T07:16:56.797Z",
+      "updated_at": "2026-11-10T07:16:56.797Z",
+      "id": "af0944f6-e3c0-4913-9c64-f538317c6bd0"
+    },
+    {
+      "title": "Tes Artikel 2",
+      "slug": "tes-artikel-2-mwaczn3i",
+      "excerpt": "meow",
+      "content": "meowing",
+      "thumbnail_path": "/uploads/1794295119151-563b674500c5.jpg",
+      "status": "published",
+      "author_id": "usr_admin_default",
+      "created_at": "2026-11-10T07:18:44.910Z",
+      "updated_at": "2026-11-10T07:18:44.910Z",
+      "id": "5c084c79-6ff2-4acb-a045-0da51e2c71da"
+    }
+  ],
+  "Orders": [
+    {
+      "id": "ORD-MWBG8LME-W8JW",
+      "user_id": "usr_admin_default",
+      "user_email": "admin@gmail.com",
+      "product_id": "pkg_book_box_monthly",
+      "product_name": "Paket Langganan Book Box Bulanan",
+      "quantity": 1,
+      "price": 185000,
+      "total_price": 185000,
+      "recipient_name": "Ahmad Literasi",
+      "phone": "081298765432",
+      "shipping_address": "Jl. Senopati Raya No. 42, Kebayoran Baru, Jakarta Selatan",
+      "notes": "Mohon sertakan kartu ucapan edisi sastra klasik.",
+      "payment_method": "QRIS",
+      "status": "menunggu_konfirmasi",
+      "admin_notes": "",
+      "created_at": "2026-11-11T01:37:27.926Z",
+      "updated_at": "2026-11-11T01:37:29.414Z"
+    },
+    {
+      "id": "ORD-MWBGDVZB-R2F9",
+      "user_id": "usr_admin_default",
+      "user_email": "admin@gmail.com",
+      "product_id": "pkg_starter_penulis",
+      "product_name": "Paket Bimbingan & Cetak Penulis Mandiri",
+      "quantity": 1,
+      "price": 450000,
+      "total_price": 450000,
+      "recipient_name": "Administrator Bookers",
+      "phone": "081998417621",
+      "shipping_address": "Jl. ABC UTAMA 3",
+      "notes": "234",
+      "payment_method": "QRIS",
+      "status": "menunggu_konfirmasi",
+      "admin_notes": "",
+      "created_at": "2026-11-11T01:41:34.631Z",
+      "updated_at": "2026-11-11T01:41:36.837Z"
+    },
+    {
+      "id": "ORD-MWBGMSHZ-MRZO",
+      "user_id": "usr_admin_default",
+      "user_email": "admin@gmail.com",
+      "product_id": "pkg_starter_penulis",
+      "product_name": "Paket Bimbingan & Cetak Penulis Mandiri",
+      "quantity": 242,
+      "price": 450000,
+      "total_price": 108900000,
+      "recipient_name": "Administrator Bookers",
+      "phone": 81998417621,
+      "shipping_address": "Jl. ABCD Utama 67",
+      "notes": "halo",
+      "payment_method": "QRIS",
+      "status": "dikonfirmasi",
+      "admin_notes": "",
+      "created_at": "2026-11-11T01:48:30.023Z",
+      "updated_at": "2026-11-11T02:02:26.896Z"
+    }
+  ]
+}

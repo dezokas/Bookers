@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&amp;family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed":"#85f8c4","error-container":"#ffdad6","surface-container-highest":"#e4e2de","on-primary-fixed":"#341100","on-primary":"#ffffff","on-error-container":"#93000a","on-error":"#ffffff","surface-container-low":"#f5f3ef","surface-tint":"#9d4300","on-tertiary":"#ffffff","on-tertiary-fixed":"#002115","inverse-primary":"#ffb690","on-tertiary-container":"#003a28","surface-bright":"#fbf9f5","outline":"#8c7164","inverse-surface":"#30312e","primary-fixed-dim":"#ffb690","on-background":"#1b1c1a","primary-fixed":"#ffdbca","on-secondary-container":"#00714e","primary-container":"#f97316","error":"#ba1a1a","on-primary-fixed-variant":"#783200","on-surface":"#1b1c1a","tertiary-fixed":"#97f5cc","on-secondary-fixed-variant":"#005137","tertiary-container":"#4dab86","tertiary-fixed-dim":"#7bd8b1","surface-variant":"#e4e2de","surface":"#fbf9f5","secondary":"#006c4a","on-secondary":"#ffffff","surface-dim":"#dbdad6","on-secondary-fixed":"#002114","outline-variant":"#e0c0b1","tertiary":"#006c4e","on-tertiary-fixed-variant":"#00513a","secondary-fixed-dim":"#68dba9","primary":"#9d4300","surface-container-lowest":"#ffffff","inverse-on-surface":"#f2f0ed","background":"#fbf9f5","surface-container-high":"#eae8e4","surface-container":"#efeeea","secondary-container":"#82f5c1","on-primary-container":"#582200","on-surface-variant":"#584237"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-mobile":"1rem","margin":"3rem","space-lg":"1.5rem","space-sm":"0.5rem","space-md":"1rem","margin-mobile":"1.25rem","gutter":"1.5rem","space-xs":"0.25rem","space-xl":"2.5rem"},"fontFamily":{"headline-sm":["Merriweather"],"label-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-xl-mobile":["Merriweather"],"headline-md":["Merriweather"],"body-lg":["Plus Jakarta Sans"],"title-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Merriweather"],"headline-xl":["Merriweather"],"label-sm":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"display-lg-mobile":["Merriweather"],"headline-lg":["Merriweather"],"display-lg":["Merriweather"]},"fontSize":{"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"700"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"headline-xl-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"30px","fontWeight":"400"}],"title-lg":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"700"}],"headline-xl":["40px",{"lineHeight":"50px","letterSpacing":"-0.015em","fontWeight":"700"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"display-lg":["52px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1320px] mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><div class="flex items-center gap-3 shrink-0"><img alt="Bookers Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQS-NLtrxS4t0f3ahwtU7GxFXHXct_zkYhXNPJxb-nvgXQOR9cJe5JPJ9AHlMpvOGZvrJINkgwI9Y5LNA3uisPqLDFWaHyRtgxm70eOtzcwlUaCGo9fTD1D5whbR9O5351MdRNMI4xTdVp0JgxdkL9a3rHO9rgDNfPdiNGG49MImlAwK2WF-fyrHy72fmzuSXHaTZGS1IW75z2EwMZ_I8XEG2X_hIl0oTZOURtV7c3"/><span class="font-headline-md text-headline-md tracking-tight text-primary">Bookers</span></div><nav class="hidden lg:flex items-center gap-1 xl:gap-2 px-3 py-1.5 rounded-full bg-surface-container/60" data-active-classes="bg-primary-container text-on-primary-container font-title-md text-title-md rounded-xl"><a aria-current="page" class="px-4 py-2 transition-all bg-primary-container text-on-primary-container font-title-md text-title-md rounded-xl" data-path="beranda" href="#">Beranda</a><a class="px-4 py-2 rounded-lg font-title-md text-title-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="tentang-kami" href="#">Tentang Kami</a><a class="px-4 py-2 rounded-lg font-title-md text-title-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="layanan" href="#">Layanan</a><a class="px-4 py-2 rounded-lg font-title-md text-title-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="kabar-artikel" href="#">Kabar &amp; Artikel</a><a class="px-4 py-2 rounded-lg font-title-md text-title-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="kontak" href="#">Kontak</a></nav><div class="flex items-center gap-3 shrink-0"><a class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-xl font-label-md text-label-md bg-surface-container-low text-on-surface hover:bg-surface-container-highest hover:text-on-surface transition-all" data-path="masuk" href="#">Masuk</a><a class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-label-md text-label-md bg-primary-container text-on-primary hover:bg-primary transition-all shadow-[0_4px_12px_-2px_rgba(249,115,22,0.25)]" data-path="hubungi-kami" href="#">Hubungi Kami</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface py-12 lg:py-20" id="beranda">
+<div class="max-w-[1320px] mx-auto px-6 lg:px-12 flex flex-col gap-10 lg:gap-14">
+<!-- Top Highlight Statistics Pill -->
+<div class="flex justify-start">
+<div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-secondary-container/40 text-on-secondary-container shadow-sm">
+<span class="flex h-2 w-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-md text-label-md">Lebih dari 45.000+ Judul Pilihan • 120+ Penulis Berdaya • 15+ Komunitas Aktif</span>
+</div>
+</div>
+<!-- Headline & Call to Actions -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+<div class="lg:col-span-8 flex flex-col gap-5">
+<h1 class="font-display-lg text-display-lg-mobile lg:text-display-lg text-on-surface tracking-tight text-balance">
+            Menyalakan Semangat <span class="text-primary-container italic font-serif">Literasi</span> &amp; Ruang Imajinasi Indonesia
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Bookers menghadirkan kurasi buku berbobot, layanan penerbitan naskah profesional, dan kafe ruang baca nyaman untuk mempertemukan pemikiran terbaik.
+          </p>
+</div>
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-end">
+<a class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl font-label-md text-label-md bg-primary-container text-on-primary hover:bg-primary transition-all shadow-[0_6px_20px_-2px_rgba(249,115,22,0.35)] transform hover:-translate-y-0.5" href="#layanan">
+<span>Jelajahi Katalog Buku</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl font-label-md text-label-md bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-all" href="#kontak">
+<span class="material-symbols-outlined text-[20px] text-secondary">stylus_note</span>
+<span>Konsultasi Naskah</span>
+</a>
+</div>
+</div>
+<!-- Framed Hero Visual -->
+<div class="relative w-full rounded-2xl overflow-hidden shadow-[0_12px_36px_-6px_rgba(15,23,42,0.12)] group">
+<div class="relative w-full h-[380px] sm:h-[480px] lg:h-[620px] overflow-hidden bg-surface-container-high">
+<img alt="Interior Ruang Baca dan Kafe Buku Bookers Senopati" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB05x5W88lkcXOlnYJ-5sbKTwNBx-avPcWHjkPKRs_b07Ug1gYtiMFKkN5SM1R1hvuw1XWyDatq2-iWucxbjLwi88cXOPD2iTJONB6DSs15JB3LoiS2pLSIJlC9HRwivXLj_AjhNT__5ZgWt3HuZH8PzGe7wGf7xaJoLu-45aNC48zQs2-XVSFZm1i7-gyQcTIma7QbGFSzrCJHP2B4vEahSrttuCI7c8Sh18jtGPuR"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/70 via-transparent to-transparent"></div>
+</div>
+<!-- Floating Location Badge & Highlights -->
+<div class="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-surface/90 backdrop-blur-md text-on-surface shadow-lg">
+<span class="material-symbols-outlined text-primary-container text-[20px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-title-md text-title-md">Ruang Baca Senopati, Jakarta</span>
+</div>
+<div class="hidden md:flex items-center gap-6 px-6 py-3 rounded-2xl bg-surface/85 backdrop-blur-md text-on-surface shadow-lg font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">local_cafe</span>
+<span>Kopi Artisan Spesial</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-outline"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">menu_book</span>
+<span>Akses Membaca Bebas</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-outline"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">wifi</span>
+<span>Koneksi Riset Cepat</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: ABOUT SECTION -->
+<section class="relative w-full bg-surface-container-low py-16 lg:py-24" id="tentang-kami">
+<div class="max-w-[1320px] mx-auto px-6 lg:px-12 flex flex-col gap-14">
+<!-- Section Tag & Heading -->
+<div class="flex flex-col gap-3">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container w-fit">
+<span class="material-symbols-outlined text-[16px]">auto_stories</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">TENTANG BOOKERS</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<h2 class="lg:col-span-7 font-headline-xl text-headline-xl-mobile lg:text-headline-xl text-on-surface leading-snug">
+            Lebih dari Sekadar Toko Buku, Kami Rumah Bagi Para Penikmat Kata
+          </h2>
+<p class="lg:col-span-5 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Didirikan pada tahun 2018 di Jakarta, Bookers bermula dari keyakinan sederhana: bahwa akses terhadap bacaan bermutu mampu membentuk peradaban yang kritis dan berempati. Kami meramu toko buku fisik bernuansa hangat, platform kurasi daring, serta studio penerbitan mandiri yang membimbing penulis lokal melahirkan karya berdaya saing global.
+          </p>
+</div>
+</div>
+<!-- Supporting Photo & Quote Block -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<div class="lg:col-span-7 rounded-2xl overflow-hidden shadow-sm relative group bg-surface">
+<div class="relative w-full h-[360px] sm:h-[420px] overflow-hidden">
+<img alt="Tim Editor dan Kurator Sastra Bookers Mengulas Naskah" class="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJzQ_pFovBSqsViUFmhCyShXEFKK4xEIM6Wwk7ZhiYDDRS_67pGxKX8PnDlf4QGrJa4guD_kUDjnON_C7Vi5lvW1oexms9HyP81G6SZqk37Com6uSSDINctCyAB1GPfqEzFeMitJCv0kPogzthGfQdbTMkfu1vej0QKIfowYPz9FGZAa0AcGvubL7G9CVXTcut3qqXcIXINe7Ey-JLsuLVGv8q1AxJ_sXOuEBUWs8b"/>
+</div>
+<div class="p-4 bg-surface flex items-center gap-3 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0">photo_camera</span>
+<p>Tim editor &amp; kurator Bookers saat sesi telaah naskah literatur Nusantara di Studio Redaksi Senopati.</p>
+</div>
+</div>
+<!-- Distinct Values / Stats Box -->
+<div class="lg:col-span-5 flex flex-col justify-between gap-6 p-8 lg:p-10 rounded-2xl bg-surface shadow-sm">
+<div class="flex flex-col gap-3">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Manifesto Redaksional</span>
+<p class="font-headline-sm text-headline-sm text-on-surface italic font-serif leading-relaxed">
+              “Sebuah buku yang bagus bukan yang sekadar selesai dibaca, melainkan yang terus menyalakan dialog di dalam kepala.”
+            </p>
+</div>
+<div class="grid grid-cols-2 gap-6 pt-6 bg-surface-container/50 p-6 rounded-xl">
+<div class="flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg text-primary-container">650+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Judul Terbit Mandiri</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg text-secondary">98.4%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Kepuasan Penulis Mitra</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg text-secondary">34 Kota</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Jaringan Distribusi</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg text-primary-container">12.000+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Anggota Komunitas</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3 Key Strengths Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Strength 1 -->
+<div class="p-8 rounded-2xl bg-surface flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[26px]">verified</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Kurasi Kuratorial Ketat</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Setiap buku dipilih langsung oleh tim kurator sastra dan sains untuk menjamin kualitas bacaan terbaik tanpa kompromi tren sesaat.
+          </p>
+</div>
+<!-- Strength 2 -->
+<div class="p-8 rounded-2xl bg-surface flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[26px]">handshake</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Penerbitan Inklusif &amp; Adil</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Skema royalti transparan, pendampingan penyuntingan mendalam oleh editor berpengalaman, dan jaminan distribusi terstruktur secara nasional.
+          </p>
+</div>
+<!-- Strength 3 -->
+<div class="p-8 rounded-2xl bg-surface flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[26px]">groups</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Ruang Kolaborasi Komunitas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Kafe literasi kami menjadi wadah rutin bedah buku mingguan, lokakarya penulisan naskah, dan pertemuan klub baca interaktif yang inklusif.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: SERVICES SECTION -->
+<section class="relative w-full bg-surface py-16 lg:py-24" id="layanan">
+<div class="max-w-[1320px] mx-auto px-6 lg:px-12 flex flex-col gap-12">
+<!-- Section Header -->
+<div class="flex flex-col items-start gap-3 max-w-3xl">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[16px]">design_services</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">LAYANAN KAMI</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl-mobile lg:text-headline-xl text-on-surface">
+          Solusi Lengkap Dunia Buku untuk Pembaca, Penulis, &amp; Komunitas
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Mulai dari penikmat buku kasual hingga institusi pendidikan, kami menyiapkan ekosistem komprehensif untuk menyalakan gairah literasi Anda.
+        </p>
+</div>
+<!-- 6 Service Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Service 1 -->
+<div class="group p-8 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between gap-6 shadow-sm hover:shadow-md">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface flex items-center justify-center text-primary-container shadow-sm">
+<span class="material-symbols-outlined text-[26px]">storefront</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface font-label-sm text-label-sm text-on-surface-variant">Luring &amp; Daring</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">
+              Toko Buku Kurasi &amp; Kafe Literasi
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Pengalaman belanja buku luring dan daring dengan rekomendasi personal serta racikan kopi artisan lokal di lounge bernuansa tenang.
+            </p>
+</div>
+<div class="flex items-center gap-2 text-primary font-title-md text-title-md">
+<span>Jelajahi Toko</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="group p-8 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between gap-6 shadow-sm hover:shadow-md">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined text-[26px]">history_edu</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface font-label-sm text-label-sm text-on-surface-variant">Penerbitan</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-secondary transition-colors">
+              Penerbitan &amp; Percetakan Naskah
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Layanan terpadu proofreading, tata letak, ilustrasi sampul, pengurusan ISBN legalitas, hingga cetak berkualitas tinggi berstandar internasional.
+            </p>
+</div>
+<div class="flex items-center gap-2 text-secondary font-title-md text-title-md">
+<span>Ajukan Naskah</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="group p-8 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between gap-6 shadow-sm hover:shadow-md">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface flex items-center justify-center text-primary-container shadow-sm">
+<span class="material-symbols-outlined text-[26px]">apartment</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface font-label-sm text-label-sm text-on-surface-variant">Institusi</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">
+              Pengadaan Buku Institusi &amp; Sekolah
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Paket perpustakaan sekolah, kantor korporat, dan ruang baca publik dengan diskon khusus komunitas dan pendampingan katalog tematik.
+            </p>
+</div>
+<div class="flex items-center gap-2 text-primary font-title-md text-title-md">
+<span>Katalog Institusi</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Service 4 -->
+<div class="group p-8 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between gap-6 shadow-sm hover:shadow-md">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined text-[26px]">inventory_2</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-container font-label-sm text-label-sm text-on-secondary-container">Populer</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-secondary transition-colors">
+              Program Langganan Buku (Book Box)
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Paket kejutan buku bertema bulanan dilengkapi merchandise literasi eksklusif, pembatas edisi terbatas, dan surat pengantar dari kurator.
+            </p>
+</div>
+<div class="flex items-center gap-2 text-secondary font-title-md text-title-md">
+<span>Langganan Sekarang</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Service 5 -->
+<div class="group p-8 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between gap-6 shadow-sm hover:shadow-md">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface flex items-center justify-center text-primary-container shadow-sm">
+<span class="material-symbols-outlined text-[26px]">school</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface font-label-sm text-label-sm text-on-surface-variant">Edukasi</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">
+              Lokakarya &amp; Diskusi Penulisan
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Kelas intensif penulisan fiksi, non-fiksi, dan apresiasi sastra bersama sastrawan, jurnalis, dan editor kenamaan tanah air.
+            </p>
+</div>
+<div class="flex items-center gap-2 text-primary font-title-md text-title-md">
+<span>Jadwal Kelas</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Service 6 -->
+<div class="group p-8 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between gap-6 shadow-sm hover:shadow-md">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined text-[26px]">hub</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface font-label-sm text-label-sm text-on-surface-variant">Jaringan</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface group-hover:text-secondary transition-colors">
+              Distribusi &amp; Promosi Digital
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Jangkauan distribusi naskah ke seluruh jaringan toko buku terkemuka di Indonesia serta integrasi penjualan e-book pada platform internasional.
+            </p>
+</div>
+<div class="flex items-center gap-2 text-secondary font-title-md text-title-md">
+<span>Skema Distribusi</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: NEWS / ARTICLES SECTION -->
+<section class="relative w-full bg-surface-container-low py-16 lg:py-24" id="kabar-artikel">
+<div class="max-w-[1320px] mx-auto px-6 lg:px-12 flex flex-col gap-12">
+<!-- Section Header -->
+<div class="flex flex-col items-start gap-3 max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-[16px]">newspaper</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">KABAR &amp; ARTIKEL</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl-mobile lg:text-headline-xl text-on-surface">
+          Wawasan, Resensi, &amp; Cerita Seputar Sastra Terkini
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Kumpulan esai reflektif, rangkuman peristiwa komunitas buku, serta catatan praktis penulisan naskah langsung dari meja dewan redaksi Bookers.
+        </p>
+</div>
+<!-- 3 Editorial Article Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Article Card 1 -->
+<article class="flex flex-col bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
+<div class="w-full h-52 overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Editorial book review flatlay of open literary novels, spectacles, and notebook resting on a rustic oak coffee table with warm natural shadows and Indonesian cultural accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGh2FTxjaU9zAFiRgA-NvJUzjc_bh3bjl88A7rtg2P1S6PhEzxEKdaecoLb6nkB6BN1s2ebCghs2avx6gSOY3sUv_Y-myJTo75JC3sGWfnGKxPSLx_BC7AbxIqHzmYg13nKfNk9V7qVy4nnfJKNo9EDKTgI1Y7HeXpbOtEyTt1BS3WA1x7eh3VwoPCytMEflTEbyTpfjQx2VyltRDryjEOnJkB1xdsYTqS3MoXzo_r"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shadow-sm">
+                Resensi Buku
+              </span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between gap-6">
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>14 Mei 2025</span>
+<span>•</span>
+<span>5 mnt baca</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface font-headline-sm group-hover:text-primary transition-colors leading-snug">
+                Membaca Ulang Realisme Magis dalam Lanskap Sastra Asia Tenggara Kontemporer
+              </h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 leading-relaxed">
+                Bagaimana penulis muda Indonesia mengolah kembali mitos lokal menjadi refleksi kritis persoalan sosial modern.
+              </p>
+</div>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary-container hover:text-primary transition-colors pt-2" href="#">
+<span>Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Article Card 2 -->
+<article class="flex flex-col bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
+<div class="w-full h-52 overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An intimate evening poetry reading gathering inside a warm cozy bookshop, attendees listening with coffee mugs under soft ambient amber lamps and surrounding bookshelves." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5Ji29NPzjtik-7_7Uuaf21_T6dJn6E0EMM5VVVJYFUR5Y-UJWxN6ZTBduKpf_u_7daSID-8zSEgIS_M1ClFpDSSJ6x8XtBmeM0hU4xYRbO_K84NMUV9Lkv-rqo5r_6pHnGAXV4FOS9xGtcDj1V0KkiiWBNbqsTJ8PqRIZpTbDjG7O8YDW3FMqYmEhRUcnptb3RrPFCM9BToTyyshOvbnv5SYp89dUvztf8jotx95S"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm shadow-sm">
+                Kabar Komunitas
+              </span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between gap-6">
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>08 Mei 2025</span>
+<span>•</span>
+<span>4 mnt baca</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface font-headline-sm group-hover:text-primary transition-colors leading-snug">
+                Malam Puisi Senopati: Membuka Ruang Dialog Inklusif bagi Generasi Baru
+              </h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 leading-relaxed">
+                Ratusan penikmat sastra berkumpul di Bookers Lounge merayakan peluncuran antologi puisi kemanusiaan dan kebebasan berekspresi.
+              </p>
+</div>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary-container hover:text-primary transition-colors pt-2" href="#">
+<span>Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Article Card 3 -->
+<article class="flex flex-col bg-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all group">
+<div class="w-full h-52 overflow-hidden bg-surface-container relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean minimal wooden workspace featuring printed literary book manuscript, vintage fountain pen, and editor notes in a bright Jakarta daylight studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwJOpAQzN0quT2PUXKRmZjzPbuZhvkywZhKv4gLCkrxNjh79bm0MVvAuxhvQ81EiqAQoqjnp6Xsuqh1iew21fIFpATVtI_W9jQ1swAMhZQ81UEmg9B-s2UBpFQG9QZWF10AxDwwVHYTe-Lrht-azhLg2Cx6zxFwhwpgOmiamz4e2YMnQ_hxftGRcAKMV5HtEx6lfCgHLh6QgP0lJ-Lo2YmW17A0UeODoK2g1VoMLst"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shadow-sm">
+                Tips Penulis
+              </span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between gap-6">
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>29 April 2025</span>
+<span>•</span>
+<span>7 mnt baca</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface font-headline-sm group-hover:text-primary transition-colors leading-snug">
+                Panduan Menyusun Proposal Naskah yang Memikat Penerbit Idaman Anda
+              </h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 leading-relaxed">
+                Langkah-langkah esensial dari meja dewan redaksi Bookers untuk membantu karya perdana Anda lolos telaah kurasi tanpa berbelit.
+              </p>
+</div>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-primary-container hover:text-primary transition-colors pt-2" href="#">
+<span>Baca Selengkapnya</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+<!-- Center Button CTA -->
+<div class="flex justify-center pt-4">
+<a class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-xl font-label-md text-label-md bg-surface text-on-surface hover:bg-surface-container hover:text-primary transition-all shadow-sm" href="#">
+<span>Lihat Semua Artikel &amp; Esai</span>
+<span class="material-symbols-outlined text-[18px]">feed</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECTION 5: CONTACT SECTION -->
+<section class="relative w-full bg-surface py-16 lg:py-24" id="kontak">
+<div class="max-w-[1320px] mx-auto px-6 lg:px-12 flex flex-col gap-12">
+<!-- Section Header -->
+<div class="flex flex-col items-start gap-3 max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[16px]">contact_support</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">HUBUNGI KAMI</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl-mobile lg:text-headline-xl text-on-surface">
+          Mari Berkunjung atau Mulai Percakapan Bersama Kami
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Apakah Anda ingin mendiskusikan naskah, menjadwalkan kunjungan komunitas, atau sekadar bertanya stok buku favorit? Kami siap menyapa.
+        </p>
+</div>
+<!-- Split Layout: Contact Form + Interactive Map UI -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+<!-- Left Column: Details + Form -->
+<div class="lg:col-span-7 flex flex-col gap-8">
+<!-- Contact Detail Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-5 rounded-2xl bg-surface-container-low flex items-start gap-3.5">
+<span class="material-symbols-outlined text-primary-container text-[24px] mt-0.5 shrink-0">location_on</span>
+<div class="flex flex-col gap-1">
+<span class="font-title-md text-title-md text-on-surface">Alamat Utama</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  Jl. Senopati Raya No. 42, Kebayoran Baru, Jakarta Selatan 12190
+                </span>
+</div>
+</div>
+<div class="p-5 rounded-2xl bg-surface-container-low flex items-start gap-3.5">
+<span class="material-symbols-outlined text-secondary text-[24px] mt-0.5 shrink-0">chat</span>
+<div class="flex flex-col gap-1">
+<span class="font-title-md text-title-md text-on-surface">WhatsApp &amp; Telepon</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  +62 812-8899-7700<br/>
+<span class="text-secondary font-medium">Respon cepat tanggap</span>
+</span>
+</div>
+</div>
+<div class="p-5 rounded-2xl bg-surface-container-low flex items-start gap-3.5">
+<span class="material-symbols-outlined text-secondary text-[24px] mt-0.5 shrink-0">mail</span>
+<div class="flex flex-col gap-1">
+<span class="font-title-md text-title-md text-on-surface">Surat Elektronik</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  halo@bookers.id<br/>
+                  naskah@bookers.id (Editorial)
+                </span>
+</div>
+</div>
+<div class="p-5 rounded-2xl bg-surface-container-low flex items-start gap-3.5">
+<span class="material-symbols-outlined text-primary-container text-[24px] mt-0.5 shrink-0">schedule</span>
+<div class="flex flex-col gap-1">
+<span class="font-title-md text-title-md text-on-surface">Jam Operasional</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Senin – Minggu<br/>
+                  08.00 – 22.00 WIB
+                </span>
+</div>
+</div>
+</div>
+<!-- Message Form -->
+<form class="p-8 rounded-2xl bg-surface-container-low flex flex-col gap-5 shadow-sm" id="contactForm">
+<h3 class="font-title-lg text-title-lg text-on-surface">Kirim Pesan atau Permintaan Naskah</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="fullName">Nama Lengkap</label>
+<input class="px-4 py-3 rounded-xl bg-surface text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="fullName" placeholder="cth. Raditya Wicaksono" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="emailAddr">Alamat Email</label>
+<input class="px-4 py-3 rounded-xl bg-surface text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="emailAddr" placeholder="nama@email.com" required="" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="subjectSelect">Pilihan Subjek</label>
+<select class="px-4 py-3 rounded-xl bg-surface text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="subjectSelect">
+<option value="buku">Tanya Ketersediaan Buku</option>
+<option value="naskah">Pengajuan Proposal Naskah Baru</option>
+<option value="acara">Kerjasama Acara &amp; Komunitas</option>
+<option value="institusi">Pengadaan Perpustakaan Institusi</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="messageText">Pesan Anda</label>
+<textarea class="px-4 py-3 rounded-xl bg-surface text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary-container transition-all resize-none" id="messageText" placeholder="Ceritakan kebutuhan buku, rencana acara, atau garis besar naskah Anda..." required="" rows="4"></textarea>
+</div>
+<button class="w-full sm:w-fit px-8 py-3.5 rounded-xl font-label-md text-label-md bg-primary-container text-on-primary hover:bg-primary transition-all shadow-[0_4px_16px_-2px_rgba(249,115,22,0.3)] flex items-center justify-center gap-2" id="submitBtn" type="submit">
+<span>Kirim Pesan Sekarang</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+<div class="hidden p-4 rounded-xl bg-secondary-container text-on-secondary-container font-body-sm text-body-sm items-center gap-2" id="formSuccessMessage">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Terima kasih! Pesan Anda telah diterima tim Bookers dan akan dibalas dalam 1x24 jam kerja.</span>
+</div>
+</form>
+</div>
+<!-- Right Column: Simulated Google Maps Card Component -->
+<div class="lg:col-span-5 flex flex-col gap-4 sticky top-28">
+<div class="relative w-full rounded-2xl overflow-hidden shadow-md bg-surface-container flex flex-col">
+<!-- Map Preview Frame -->
+<div class="relative w-full h-[440px] bg-cover bg-center overflow-hidden" data-location="Jl. Senopati Raya No. 42, Kebayoran Baru, Jakarta Selatan" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRBkHWKE5XF34nnFsOzmiMkQxCuWJu74yt9extQAuNVn1L6S67IEqdnMXaFyIMJ57gFd4QsLka1Qg575UZerFR7WLEEc8fqAiqoqo3NlRdrA3_4q4cgox27HNiGaQmip1YOTW9sF9-E530ZTlNxDArfjEHU4CxNalWlOYQpmiD1vWdhdmuQAlbrOl6FXDNapehZq7jGZD-3_PI2fWYFMmP2_zB7ShkYRIpC8w1EB4c')">
+<!-- Map Controls Simulation -->
+<div class="absolute top-4 right-4 flex flex-col gap-1.5 z-10">
+<button aria-label="Perbesar Peta" class="w-10 h-10 rounded-lg bg-surface/95 text-on-surface flex items-center justify-center shadow-md hover:bg-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<button aria-label="Perkecil Peta" class="w-10 h-10 rounded-lg bg-surface/95 text-on-surface flex items-center justify-center shadow-md hover:bg-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+</div>
+<!-- Centered Interactive Location Pin -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="flex flex-col items-center animate-bounce">
+<div class="px-4 py-2 rounded-xl bg-on-surface text-surface shadow-xl flex items-center gap-2 font-label-md text-label-md pointer-events-auto">
+<span class="material-symbols-outlined text-primary-container text-[18px]" style="font-variation-settings: 'FILL' 1;">local_library</span>
+<span>Bookers Bookstore &amp; Lounge</span>
+</div>
+<span class="material-symbols-outlined text-primary-container text-[36px] -mt-1 drop-shadow-md" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+<!-- Transport Access Quick Badges -->
+<div class="absolute bottom-4 left-4 right-4 z-10 flex flex-wrap gap-2">
+<div class="px-3 py-1.5 rounded-lg bg-surface/90 backdrop-blur-md text-on-surface font-body-sm text-body-sm shadow flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">directions_subway</span>
+<span>5 menit dari MRT Senayan</span>
+</div>
+<div class="px-3 py-1.5 rounded-lg bg-surface/90 backdrop-blur-md text-on-surface font-body-sm text-body-sm shadow flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">local_parking</span>
+<span>Area Parkir Tersedia</span>
+</div>
+</div>
+</div>
+<!-- Card Bottom Bar -->
+<div class="p-5 bg-surface flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">Bookers Senopati Flagship</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Kebayoran Baru, Jakarta Selatan</span>
+</div>
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container hover:bg-primary-fixed hover:text-on-primary-fixed-variant text-on-surface font-label-md text-label-md transition-all shrink-0" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span>Buka di Google Maps</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Script for Form submission & smooth links -->
+<script>
+    (function() {
+      const contactForm = document.getElementById('contactForm');
+      const successMessage = document.getElementById('formSuccessMessage');
+      const submitBtn = document.getElementById('submitBtn');
+
+      if (contactForm && successMessage) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          submitBtn.disabled = true;
+          submitBtn.classList.add('opacity-75');
+          submitBtn.innerHTML = '<span>Mengirimkan...</span>';
+
+          setTimeout(function() {
+            submitBtn.style.display = 'none';
+            successMessage.classList.remove('hidden');
+            successMessage.classList.add('flex');
+            contactForm.reset();
+          }, 600);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low"><div class="max-w-[1320px] mx-auto px-6 lg:px-12 pt-16 pb-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12"><div class="lg:col-span-5 flex flex-col gap-4"><div class="flex items-center gap-3"><img alt="Bookers Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQS-NLtrxS4t0f3ahwtU7GxFXHXct_zkYhXNPJxb-nvgXQOR9cJe5JPJ9AHlMpvOGZvrJINkgwI9Y5LNA3uisPqLDFWaHyRtgxm70eOtzcwlUaCGo9fTD1D5whbR9O5351MdRNMI4xTdVp0JgxdkL9a3rHO9rgDNfPdiNGG49MImlAwK2WF-fyrHy72fmzuSXHaTZGS1IW75z2EwMZ_I8XEG2X_hIl0oTZOURtV7c3"/><span class="font-headline-md text-headline-md tracking-tight text-primary">Bookers</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Membawa semesta literasi berkualitas lebih dekat kepada pembaca Indonesia melalui kurasi buku pilihan, penerbitan independen, dan ruang baca inklusif.</p><div class="flex items-center gap-3 pt-2"><a aria-label="Instagram" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-container transition-all" href="#"><span class="material-symbols-outlined text-[18px]">photo_camera</span></a><a aria-label="Twitter" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-container transition-all" href="#"><span class="material-symbols-outlined text-[18px]">chat_bubble</span></a><a aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-container transition-all" href="#"><span class="material-symbols-outlined text-[18px]">business_center</span></a><a aria-label="YouTube" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-secondary-container hover:text-on-secondary-container transition-all" href="#"><span class="material-symbols-outlined text-[18px]">smart_display</span></a></div></div><div class="lg:col-span-3 flex flex-col gap-3"><h3 class="font-title-lg text-title-lg text-on-surface">Tautan Navigasi</h3><ul class="flex flex-col gap-2.5 font-body-md text-body-md text-on-surface-variant"><li class="p-0 m-0"><a class="hover:text-primary transition-colors" data-path="beranda" href="#">Beranda</a></li><li class="p-0 m-0"><a class="hover:text-primary transition-colors" data-path="tentang-kami" href="#">Tentang Kami</a></li><li class="p-0 m-0"><a class="hover:text-primary transition-colors" data-path="layanan" href="#">Layanan &amp; Kurasi</a></li><li class="p-0 m-0"><a class="hover:text-primary transition-colors" data-path="kabar-artikel" href="#">Kabar &amp; Artikel</a></li><li class="p-0 m-0"><a class="hover:text-primary transition-colors" data-path="kontak" href="#">Kontak &amp; Lokasi</a></li></ul></div><div class="lg:col-span-4 flex flex-col gap-3"><h3 class="font-title-lg text-title-lg text-on-surface">Informasi Kontak</h3><div class="flex flex-col gap-3 font-body-md text-body-md text-on-surface-variant"><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">schedule</span><span>Senin - Minggu: 08.00 - 22.00 WIB</span></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">location_on</span><span>Jl. Kemang Raya No. 42, Bangka, Mampang Prapatan, Jakarta Selatan 12730</span></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">mail</span><span>halo@bookers.id</span></div></div></div></div><div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant bg-surface-container-high/40 p-4 rounded-xl"><p>© 2025 Bookers Indonesia. Seluruh hak cipta dilindungi.</p><div class="flex items-center gap-6"><a class="hover:text-on-surface transition-colors" href="#">Kebijakan Privasi</a><a class="hover:text-on-surface transition-colors" href="#">Syarat &amp; Ketentuan</a></div></div></div></footer></body></html>
