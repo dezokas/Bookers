@@ -71,10 +71,15 @@ Posisi saat ini: **Step 4 - Deploy ke Vercel & Mode Maintenance**
   - [x] Integrasi ringkasan statistik pesanan di beranda admin (`/dashboard`)
   - [x] Integrasi navigasi "Pesan Buku" & "Pesanan Saya" di Header Navbar & Drawer Mobile
   - [x] Dikonfirmasi pengguna (Gerbang Konfirmasi Step 3 lolos)
-- [ ] STEP 4 - Deploy & Maintenance
-  - [ ] Checklist QA sebelum rilis
-  - [ ] Deploy ke Vercel
-  - [ ] Dikonfirmasi pengguna
+- [x] STEP 4 - Polish Desain, Refinement & Persiapan Deploy
+  - [x] Perbaikan efek hover tombol "Konsultasi Naskah" di Hero (transisi halus ke forest green `#006c4a`, teks & ikon putih, elevasi shadow)
+  - [x] Input thumbnail modal berita menggunakan URL gambar langsung dengan live preview (menghilangkan tombol file upload lokal)
+  - [x] Penghapusan badge kategori ("Resensi Buku" / "Kabar Komunitas") pada kartu artikel di landing page
+  - [x] Penyesuaian margin dan divider pada bottom bar footer agar simetris dan rapi
+  - [x] Fitur penambahan akun baru non-admin (`role_user`) di `/dashboard/users`
+  - [x] Tombol Logout ("Keluar") yang jelas di Navbar dan Topbar Dashboard
+  - [x] Build produksi lulus 100% tanpa error (`npm run build`)
+  - [x] Server lokal aktif di `http://localhost:3000`
 
 ## Daftar Gambar Dummy Lokal & Ukuran Ideal
 

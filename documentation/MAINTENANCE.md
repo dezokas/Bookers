@@ -19,6 +19,17 @@ Panduan pencatatan pemeliharaan, bug, backlog fitur, dan riwayat perubahan websi
 
 ## 3. Riwayat Perubahan (Changelog)
 
+### [12 November 2026] - Polish Step 4 & Refinement UI/UX
+- **Perbaikan UI:**
+  - Memperbaiki efek hover tombol "Konsultasi Naskah" di Hero: background kini bertransisi mulus ke deep forest green (`#006c4a`), warna teks & ikon menjadi putih (`text-white`), serta bayangan dan elevasi naik (`-translate-y-0.5`).
+  - Menghilangkan badge kategori ("Resensi Buku" / "Kabar Komunitas") pada seluruh kartu artikel di section Kabar & Artikel landing page.
+  - Memperbaiki margin dan padding bottom bar footer agar simetris, rapi, dan menggunakan divider garis modern.
+  - Menghapus label "(Published)" pada status artikel di tabel berita, kini hanya bertuliskan "Tayang".
+- **Fitur Baru & Perubahan Modal:**
+  - Input thumbnail pada modal kelola berita dialihkan sepenuhnya menggunakan input URL gambar langsung (disertai live preview), menghapus tombol "Choose File" / upload lokal.
+  - Penambahan fitur pembuatan akun baru non-admin (`role_user`) di `/dashboard/users` melalui tombol "+ Tambah Akun Baru" dan modal form.
+  - Penambahan tombol Logout ("Keluar") yang langsung terlihat di Navbar dan Topbar Dashboard.
+
 ### [11 November 2026] - Step 3 Selesai & Persiapan Step 4
 - **Fitur Baru:**
   - Form Pemesanan Paket Buku interaktif di `/pesan`.

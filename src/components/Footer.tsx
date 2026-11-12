@@ -120,13 +120,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant bg-surface-container-high/40 p-4 rounded-xl border border-outline-variant/20">
+        <div className="pt-8 mt-4 border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
           <p>© {new Date().getFullYear()} Bookers Indonesia. Seluruh hak cipta dilindungi.</p>
           <div className="flex items-center gap-6">
-            <a href="#kontak" className="hover:text-on-surface transition-colors">
+            <a href="#kontak" className="hover:text-primary transition-colors">
               Kebijakan Privasi
             </a>
-            <a href="#kontak" className="hover:text-on-surface transition-colors">
+            <a href="#kontak" className="hover:text-primary transition-colors">
               Syarat &amp; Ketentuan
             </a>
           </div>

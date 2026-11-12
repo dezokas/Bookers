@@ -21,7 +21,7 @@ export default function News() {
             slug: n.slug,
             excerpt: n.excerpt,
             content: n.content,
-            category: idx % 2 === 0 ? "Resensi Buku" : "Kabar Komunitas",
+            category: "Artikel Literasi",
             date: new Date(n.created_at).toLocaleDateString("id-ID", {
               day: "numeric",
               month: "short",
@@ -47,7 +47,7 @@ export default function News() {
           </div>
 
           <h2 className="font-headline text-2xl sm:text-3xl lg:text-4xl font-bold text-on-surface leading-tight">
-            Wawasan, Resensi, &amp; Cerita Seputar Sastra Terkini
+            Wawasan &amp; Cerita Seputar Sastra Terkini
           </h2>
           <p className="text-base sm:text-lg text-on-surface-variant leading-relaxed">
             Kumpulan esai reflektif, rangkuman peristiwa komunitas buku, serta catatan praktis
@@ -57,9 +57,7 @@ export default function News() {
 
         {/* 3 Editorial Article Cards (Real-time from Database) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {articles.map((item, index) => {
-            const isCategorySecondary = index !== 1;
-
+          {articles.map((item) => {
             return (
               <article
                 key={item.id}
@@ -71,20 +69,10 @@ export default function News() {
                     src={item.thumbnail}
                     alt={item.title}
                     fill
+                    unoptimized={item.thumbnail?.startsWith("http")}
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
-                  <div className="absolute top-4 left-4">
-                    <span
-                      className={`px-3 py-1 rounded-full text-xs font-semibold shadow-sm ${
-                        isCategorySecondary
-                          ? "bg-secondary-container text-on-secondary-container"
-                          : "bg-primary-fixed text-on-primary-fixed-variant"
-                      }`}
-                    >
-                      {item.category}
-                    </span>
-                  </div>
                 </div>
 
                 {/* Article Info */}
@@ -140,7 +128,7 @@ export default function News() {
           <div className="bg-surface rounded-2xl max-w-2xl w-full p-6 sm:p-8 border border-outline-variant/30 shadow-2xl flex flex-col gap-4 max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between border-b border-outline-variant/30 pb-3">
               <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                {selectedArticle.category}
+                Kabar &amp; Artikel
               </span>
               <button
                 type="button"

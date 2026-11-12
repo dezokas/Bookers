@@ -8,7 +8,6 @@ export default function NewsManagementPage() {
   const [news, setNews] = useState<NewsRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState(false);
-  const [uploadLoading, setUploadLoading] = useState(false);
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
   // Modals
@@ -66,36 +65,6 @@ export default function NewsManagementPage() {
       status: item.status,
     });
     setEditorModalOpen(true);
-  };
-
-  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    setUploadLoading(true);
-    setMessage(null);
-
-    const body = new FormData();
-    body.append("file", file);
-
-    try {
-      const res = await fetch("/api/upload", {
-        method: "POST",
-        body,
-      });
-      const data = await res.json();
-
-      if (!res.ok || !data.success) {
-        setMessage({ type: "error", text: data.error || "Gagal mengunggah gambar." });
-      } else {
-        setFormData((prev) => ({ ...prev, thumbnail_path: data.filePath }));
-        setMessage({ type: "success", text: "Gambar thumbnail berhasil diunggah ke folder lokal." });
-      }
-    } catch {
-      setMessage({ type: "error", text: "Terjadi kesalahan saat upload gambar." });
-    } finally {
-      setUploadLoading(false);
-    }
   };
 
   const handleSaveNews = async (e: React.FormEvent) => {
@@ -354,13 +323,13 @@ export default function NewsManagementPage() {
                 />
               </div>
 
-              {/* Upload Thumbnail */}
+              {/* URL Gambar Thumbnail */}
               <div className="flex flex-col gap-2">
                 <label className="text-xs font-semibold text-on-surface">
-                  Gambar Sampul / Thumbnail Artikel
+                  URL Gambar Sampul / Thumbnail Artikel
                 </label>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-                  <div className="relative w-24 h-16 rounded-xl overflow-hidden bg-surface-container shrink-0 border border-outline-variant/40">
+                <div className="flex items-center gap-4">
+                  <div className="relative w-24 h-16 rounded-xl overflow-hidden bg-surface-container shrink-0 border border-outline-variant/40 shadow-xs">
                     <Image
                       src={formData.thumbnail_path || "/images/news-1.jpg"}
                       alt="Thumbnail Preview"
@@ -369,24 +338,18 @@ export default function NewsManagementPage() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="flex flex-col gap-2 flex-1 w-full">
+                  <div className="flex flex-col gap-1.5 flex-1 w-full">
                     <input
-                      type="file"
-                      accept="image/*"
-                      onChange={handleFileUpload}
-                      disabled={uploadLoading}
-                      className="text-xs text-on-surface-variant file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-surface-container file:text-on-surface hover:file:bg-surface-container-high"
+                      type="text"
+                      required
+                      placeholder="Masukkan URL gambar (contoh: https://... atau /images/news-1.jpg)"
+                      value={formData.thumbnail_path}
+                      onChange={(e) => setFormData({ ...formData, thumbnail_path: e.target.value })}
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-surface text-xs border border-outline-variant/40 focus:ring-2 focus:ring-primary-container"
                     />
-                    <div className="flex items-center gap-2">
-                      <span className="text-[10px] text-outline shrink-0">Atau URL:</span>
-                      <input
-                        type="url"
-                        placeholder="https://images.unsplash.com/... atau /images/news-1.jpg"
-                        value={formData.thumbnail_path}
-                        onChange={(e) => setFormData({ ...formData, thumbnail_path: e.target.value })}
-                        className="px-2.5 py-1 text-xs rounded-lg bg-surface border border-outline-variant/40 flex-1 focus:ring-1 focus:ring-primary"
-                      />
-                    </div>
+                    <span className="text-[11px] text-outline">
+                      Masukkan tautan gambar langsung dari internet atau gunakan gambar lokal seperti <code>/images/news-1.jpg</code>.
+                    </span>
                   </div>
                 </div>
               </div>

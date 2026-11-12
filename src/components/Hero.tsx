@@ -30,9 +30,9 @@ export default function Hero() {
             </Link>
             <a
               href="#kontak"
-              className="w-full max-w-[260px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-all duration-200 border border-secondary/20 text-center"
+              className="w-full max-w-[260px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-secondary-container text-on-secondary-container hover:bg-secondary hover:text-white transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5 border border-secondary/30 text-center group"
             >
-              <span className="material-symbols-outlined text-[18px] text-secondary">
+              <span className="material-symbols-outlined text-[18px] text-secondary group-hover:text-white transition-colors">
                 stylus_note
               </span>
               <span>Konsultasi Naskah</span>
